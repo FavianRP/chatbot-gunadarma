@@ -1,5 +1,5 @@
 
-# NLP Gunadarma Chatbot — Frontend (Node.js) + Backend (Python)
+# NLP Gunadarma Chatbot — Frontend (Vite.js) + Backend (Python)
 
 **Choose language / Pilih bahasa:**
 - [Bahasa Indonesia](#bahasa-indonesia)
