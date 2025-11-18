@@ -80,4 +80,12 @@ def health():
     return jsonify({'status': 'ok', 'message': 'API is running'})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    from waitress import serve
+    import logging 
+
+    logger = logging.getLogger('waitress')
+    logger.setLevel(logging.ERROR)
+
+    print(f"Server backend sudah berjalan.")
+    print("Tekan CTRL+C untuk menghentikan server.")
+    serve(app, host='0.0.0.0', port=5000)
