@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Trash2, Volume2, Download } from 'lucide-react';
+import LogoUG from "./assets/logo-ug.png";
 
 const ChatbotGunadarma = () => {
   const [messages, setMessages] = useState([
@@ -135,11 +136,11 @@ const ChatbotGunadarma = () => {
 
   // Quick questions
   const quickQuestions = [
-    "Bagaimana cara mendaftar?",
+    "Siapa rektor Gunadarma?",
     "Berapa biaya kuliah?",
     "Cara mengisi KRS?",
-    "Lokasi kampus ada dimana?",
-    "Siapa rektor Gunadarma?"
+    "Apa itu PI?",
+    "Lokasi kampus ada dimana?"
   ];
 
   const handleQuickQuestion = (question) => {
@@ -155,8 +156,8 @@ const ChatbotGunadarma = () => {
         <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-6 shadow-lg">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
-                <Bot className="w-10 h-10 text-purple-600" />
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden">
+                <img src={LogoUG} alt="Logo UG" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold">Chatbot Gunadarma</h1>
