@@ -4,18 +4,23 @@ import pickle
 from sentence_transformers import SentenceTransformer
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
+from pathlib import Path
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for React frontend
+BASE_DIR = Path(__file__).resolve().parent
+EMBEDDINGS_PATH = BASE_DIR / "embeddings.pkl"
+QA_DATA_PATH = BASE_DIR / "qa_data.pkl"
+
 
 # Load model dan data
 print("Loading model...")
 model = SentenceTransformer('denaya/indoSBERT-large')
 
-with open('embeddings.pkl', 'rb') as f:
+with open(EMBEDDINGS_PATH, 'rb') as f:
     emb_data = pickle.load(f)
 
-with open('qa_data.pkl', 'rb') as f:
+with open(QA_DATA_PATH, 'rb') as f:
     qa_data = pickle.load(f)
 
 embeddings = emb_data['embeddings']
